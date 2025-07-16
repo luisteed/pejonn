@@ -1,0 +1,11 @@
+﻿$('#carouselhome').on('slid.bs.carousel', function () {
+    var index = $("#carouselhome .carousel-item.active").attr("data-index") - 1;
+    $(".carouselhomeindicators li a").removeClass("active");
+    $(".carouselhomeindicators li a[data-index='" + index + "']").addClass("active");
+})
+$(".carouselhomeindicators li a").click(function () {
+    var index = $(this).attr("data-index");
+    var res = parseInt(index);
+    $("#carouselhome").carousel(res);
+    return false;
+});
